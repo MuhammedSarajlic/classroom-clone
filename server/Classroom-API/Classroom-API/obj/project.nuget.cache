@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "RrOpHgBVFvqo9N60qMKrxgFv3HWQ1TqU3zRyn4tITwxzKfoWbKG8hhJ/jKlqyAarxoLhOmz1gonwy5hKwF6wUA==",
+  "dgSpecHash": "exOUUwg7aDgmfnAZJ1nw6PFPBB2M2e6m6GAgOA7cs+25yCjFtqr++M4Gs6KUN6IAsnC46x+wrZ+3cbsKn8vTcw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Muhammed\\Desktop\\classroom-clone\\server\\Classroom-API\\Classroom-API\\Classroom-API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Muhammed\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\Muhammed\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
     "C:\\Users\\Muhammed\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
+    "C:\\Users\\Muhammed\\.nuget\\packages\\microsoft.aspnet.cors\\5.2.9\\microsoft.aspnet.cors.5.2.9.nupkg.sha512",
     "C:\\Users\\Muhammed\\.nuget\\packages\\microsoft.aspnetcore.authentication.google\\6.0.13\\microsoft.aspnetcore.authentication.google.6.0.13.nupkg.sha512",
     "C:\\Users\\Muhammed\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\Muhammed\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
@@ -83,5 +84,16 @@
     "C:\\Users\\Muhammed\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.13\\microsoft.windowsdesktop.app.ref.6.0.13.nupkg.sha512",
     "C:\\Users\\Muhammed\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.13\\microsoft.netcore.app.ref.6.0.13.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.AspNet.Cors 5.2.9' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Microsoft.AspNet.Cors",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
 }
