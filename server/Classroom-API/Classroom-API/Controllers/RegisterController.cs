@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using BCrypt.Net;
+using Classroom_API.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Classroom_API.Controllers
@@ -17,9 +19,11 @@ namespace Classroom_API.Controllers
         [HttpPost]
         public async Task<ActionResult<List<User>>> AddUser(User user)
         {
+            var hashedPassword = BCrypt.Net.BCrypt.HashPassword(user.Password);
+            user.Password = hashedPassword;
             await _context.Users.AddAsync(user);
             await _context.SaveChangesAsync();
-            return Ok(await _context.Users.ToListAsync());
+            return Ok(user);
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Classroom_API.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Classroom_API.Data
 {

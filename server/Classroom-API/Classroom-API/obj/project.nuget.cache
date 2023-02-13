@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "exOUUwg7aDgmfnAZJ1nw6PFPBB2M2e6m6GAgOA7cs+25yCjFtqr++M4Gs6KUN6IAsnC46x+wrZ+3cbsKn8vTcw==",
+  "dgSpecHash": "uXr2E8cfwqqYx3zRJlT9CYR8taIa6uMM1DKGuXPMDjRb2SSjlZZDghXals11PjlndT4dBc6P62wBwzwTUi8O9w==",
   "success": true,
   "projectFilePath": "C:\\Users\\Muhammed\\Desktop\\classroom-clone\\server\\Classroom-API\\Classroom-API\\Classroom-API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Muhammed\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\Muhammed\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
+    "C:\\Users\\Muhammed\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\Muhammed\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Muhammed\\.nuget\\packages\\microsoft.aspnet.cors\\5.2.9\\microsoft.aspnet.cors.5.2.9.nupkg.sha512",
     "C:\\Users\\Muhammed\\.nuget\\packages\\microsoft.aspnetcore.authentication.google\\6.0.13\\microsoft.aspnetcore.authentication.google.6.0.13.nupkg.sha512",
