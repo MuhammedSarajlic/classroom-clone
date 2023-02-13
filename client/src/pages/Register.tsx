@@ -3,10 +3,7 @@ import { useState } from 'react';
 import GoogleLogo from '../assets/google-icon.svg';
 
 const Register = () => {
-  const [error, setError] = useState({
-    type: '',
-    message: '',
-  });
+  const [error, setError] = useState('');
   const [userData, setUserData] = useState({
     firstName: '',
     lastName: '',
@@ -29,12 +26,12 @@ const Register = () => {
             confirmPassword: '',
           });
         })
-        .catch((err) => console.log(err));
+        .catch((err) => {
+          console.log(err);
+          setError(err.response.data);
+        });
     } else {
-      setError({
-        type: 'password',
-        message: "Password doesn't match",
-      });
+      setError("Password doesn't match");
     }
   };
 
