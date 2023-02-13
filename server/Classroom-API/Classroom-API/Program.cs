@@ -1,18 +1,15 @@
 global using Classroom_API.Data;
 global using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authentication.Google;
-var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddCors(options =>
+builder.Services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
 {
-    options.AddPolicy(name: MyAllowSpecificOrigins,
-                      policy =>
-                      {
-                          policy.WithOrigins("http://localhost:5174");
-                      });
-});
+    builder.AllowAnyOrigin()
+           .AllowAnyMethod()
+           .AllowAnyHeader();
+}));
 
 // Add services to the container.
 
@@ -40,7 +37,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseCors(MyAllowSpecificOrigins);
+app.UseCors("MyPolicy");
 
 app.UseAuthentication();
 

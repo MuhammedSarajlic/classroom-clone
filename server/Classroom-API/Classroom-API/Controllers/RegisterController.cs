@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Classroom_API.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/")]
     [ApiController]
     public class RegisterController : ControllerBase
     {
@@ -17,6 +17,7 @@ namespace Classroom_API.Controllers
         }
 
         [HttpPost]
+        [Route("register/add")]
         public async Task<ActionResult<List<User>>> AddUser(User user)
         {
             var hashedPassword = BCrypt.Net.BCrypt.HashPassword(user.Password);
