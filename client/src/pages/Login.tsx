@@ -2,6 +2,7 @@ import axios from 'axios';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import GoogleLogo from '../assets/google-icon.svg';
+import { setCookie } from 'typescript-cookie';
 
 export const Login = () => {
   const [userCred, setUserCred] = useState({
@@ -17,7 +18,10 @@ export const Login = () => {
     e.preventDefault();
     axios
       .post('https://localhost:7155/api/login', userCred)
-      .then((res) => console.log(res))
+      .then((res) => {
+        console.log(res);
+        setCookie('jwt_token', res.data);
+      })
       .catch((err) => console.log(err));
   };
 
