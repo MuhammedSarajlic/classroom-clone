@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "uXr2E8cfwqqYx3zRJlT9CYR8taIa6uMM1DKGuXPMDjRb2SSjlZZDghXals11PjlndT4dBc6P62wBwzwTUi8O9w==",
+  "dgSpecHash": "2nR0RtB54cXMjljalNV9q7ixuwzUQpmm6XQ8EXMYm4Y2gBZkC8/4JXRlxIXw8XoXhR9lAW5e/fZcYU3OM1EBgA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Muhammed\\Desktop\\classroom-clone\\server\\Classroom-API\\Classroom-API\\Classroom-API.csproj",
   "expectedPackageFiles": [
@@ -10,6 +10,7 @@
     "C:\\Users\\Muhammed\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Muhammed\\.nuget\\packages\\microsoft.aspnet.cors\\5.2.9\\microsoft.aspnet.cors.5.2.9.nupkg.sha512",
     "C:\\Users\\Muhammed\\.nuget\\packages\\microsoft.aspnetcore.authentication.google\\6.0.13\\microsoft.aspnetcore.authentication.google.6.0.13.nupkg.sha512",
+    "C:\\Users\\Muhammed\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.14\\microsoft.aspnetcore.authentication.jwtbearer.6.0.14.nupkg.sha512",
     "C:\\Users\\Muhammed\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\Muhammed\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\Muhammed\\.nuget\\packages\\microsoft.data.sqlclient\\5.0.1\\microsoft.data.sqlclient.5.0.1.nupkg.sha512",

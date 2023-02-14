@@ -1,6 +1,9 @@
 global using Classroom_API.Data;
 global using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authentication.Google;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,11 +24,27 @@ builder.Services.AddDbContext<DataContext>(options =>
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddAuthentication().AddGoogle(googleOptions =>
+builder.Services.AddAuthentication(options =>
 {
-    googleOptions.ClientId = builder.Configuration["Authentication:Google:ClientId"];
-    googleOptions.ClientSecret = builder.Configuration["Authentication:Google:ClientSecret"];
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+}).AddJwtBearer(options =>
+{
+    options.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuerSigningKey = true,
+        ValidateAudience = false,
+        ValidateIssuer = false,
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(
+            builder.Configuration.GetSection("AppSettings:Token").Value!)
+        )
+    };
 });
+//builder.Services.AddAuthentication().AddGoogle(googleOptions =>
+//{
+//    googleOptions.ClientId = builder.Configuration["Authentication:Google:ClientId"];
+//    googleOptions.ClientSecret = builder.Configuration["Authentication:Google:ClientSecret"];
+//});
 
 
 var app = builder.Build();
