@@ -1,9 +1,12 @@
 import axios from 'axios';
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useContext, useEffect, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import GoogleLogo from '../assets/google-icon.svg';
+import { Context } from '../helper/Context';
 
 export const Register = () => {
+  const navigate = useNavigate();
+  const token = useContext(Context);
   const [error, setError] = useState('');
   const [userData, setUserData] = useState({
     firstName: '',
@@ -26,6 +29,7 @@ export const Register = () => {
             password: '',
             confirmPassword: '',
           });
+          navigate('/login');
         })
         .catch((err) => {
           console.log(err);
@@ -39,6 +43,12 @@ export const Register = () => {
   const updateData = (e: React.ChangeEvent<HTMLInputElement>): void => {
     setUserData({ ...userData, [e.target.name]: e.target.value });
   };
+
+  useEffect(() => {
+    if (token) {
+      navigate('/');
+    }
+  }, []);
 
   return (
     <>

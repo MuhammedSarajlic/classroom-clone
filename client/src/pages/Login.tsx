@@ -1,10 +1,13 @@
 import axios from 'axios';
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useContext, useEffect, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import GoogleLogo from '../assets/google-icon.svg';
 import { setCookie } from 'typescript-cookie';
+import { Context } from '../helper/Context';
 
 export const Login = () => {
+  const navigate = useNavigate();
+  const token = useContext(Context);
   const [userCred, setUserCred] = useState({
     email: '',
     password: '',
@@ -21,6 +24,7 @@ export const Login = () => {
       .then((res) => {
         console.log(res);
         setCookie('jwt_token', res.data);
+        navigate('/');
       })
       .catch((err) => console.log(err));
   };
