@@ -1,10 +1,16 @@
 import axios from 'axios';
-import { useContext, useEffect } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { getCookie } from 'typescript-cookie';
+import ClassFormModal from '../components/ClassFormModal';
 import { Context } from '../helper/Context';
 
-export const Home = () => {
+interface Props {
+  addClassModal: boolean;
+  setAddClassModal: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export const Home = ({ addClassModal, setAddClassModal }: Props) => {
   const navigate = useNavigate();
   const token = useContext(Context);
 
@@ -19,5 +25,10 @@ export const Home = () => {
       .catch((err) => console.log(err));
   }, []);
 
-  return <div>Home</div>;
+  return (
+    <div>
+      Home
+      {addClassModal && <ClassFormModal setAddClassModal={setAddClassModal} />}
+    </div>
+  );
 };
