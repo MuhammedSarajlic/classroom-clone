@@ -19,6 +19,7 @@ namespace Classroom_API.Controllers
         public async Task<ActionResult<User>> GetUser(User req)
         {
             var userDb = _context.Users.Where(u => u.Email == req.Email).FirstOrDefault();
+            if (userDb == null) return BadRequest("User not found");
 
             return Ok(userDb);
         }
